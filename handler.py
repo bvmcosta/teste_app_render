@@ -6,7 +6,7 @@ from flask import Flask, request, Response
 import xgboost as xgb
 
 #Load XGBoost model - carrega o modelo em memória toda vez que a api for inicializada
-model = pickle.load(open('model/model_rossmann.pkl', 'rb'))
+model = pickle.load(open('model/model_rossmann2.pkl', 'rb'))
 
 #Initialize 
 app = Flask(__name__)
