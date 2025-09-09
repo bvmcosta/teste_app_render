@@ -6,7 +6,7 @@ from flask import Flask, request, Response
 import xgboost as xgb
 
 #Load XGBoost model - carrega o modelo em memória toda vez que a api for inicializada
-model = pickle.load(open('model/model_rossmann2.pkl', 'rb'))
+model = pickle.load(open('./model/model_rossmann2.pkl', 'rb'))
 
 #Initialize 
 app = Flask(__name__)
@@ -43,4 +43,4 @@ def rossmann_predict():
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
-    app.run(host = '0.0.0.0', port = port,  debug = True) #Quando encontrar a função main, ele roda o método run no localhost (nosso computador)
+    app.run(host = '0.0.0.0', port = port,  debug = False) #Quando encontrar a função main, ele roda o método run no localhost (nosso computador)
