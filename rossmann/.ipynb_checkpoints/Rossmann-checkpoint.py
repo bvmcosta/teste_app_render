@@ -14,15 +14,15 @@ class Rossmann( object ):
         #self - salvará dentro da própria classe
         #self - variáveis dentro da classe rossmann que não podem ser acessadas sem utilizar a função - utilizando conceito de programação orientada a objeto
         #self - se uma classe externa quer acessar parâmetros internos tem que ser via método
-        self.competition_distance_scaler    = pickle.load(open('parameter/competition_distance_scaler.pkl', 'rb'))
+        self.competition_distance_scaler    = pickle.load(open('./parameter/competition_distance_scaler.pkl', 'rb'))
         
-        self.competition_time_months_scaler = pickle.load(open('parameter/competition_time_months_scaler.pkl', 'rb'))
+        self.competition_time_months_scaler = pickle.load(open('./parameter/competition_time_months_scaler.pkl', 'rb'))
 
-        self.promo_time_week_scaler         = pickle.load(open('parameter/promo_time_week_scaler.pkl', 'rb'))
+        self.promo_time_week_scaler         = pickle.load(open('./parameter/promo_time_week_scaler.pkl', 'rb'))
 
-        self.year_scaler                    = pickle.load(open('parameter/year_scaler.pkl', 'rb'))
+        self.year_scaler                    = pickle.load(open('./parameter/year_scaler.pkl', 'rb'))
 
-        self.store_type_scaler              = pickle.load(open('parameter/store_type_scaler.pkl', 'rb'))
+        self.store_type_scaler              = pickle.load(open('./parameter/store_type_scaler.pkl', 'rb'))
     #---------------------------------------------------------------------------------------------------------------------------------------------------
     def data_cleaning( self, df1 ):
 
