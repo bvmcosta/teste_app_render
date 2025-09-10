@@ -11,6 +11,11 @@ model = pickle.load(open('./model/model_rossmann2.pkl', 'rb'))
 #Initialize 
 app = Flask(__name__)
 
+#Healthcheck route
+@app.route('/', methods=['GET'])
+def home():
+    return {"status": "ok", "message": "Rossmann Sales Prediction API is running 🚀"}
+
 @app.route('/rossmann/predict', methods = ['POST'])
 def rossmann_predict():
 
@@ -42,5 +47,5 @@ def rossmann_predict():
         return Response('{}', status = 200, mimetype = 'application/json')
 
 if __name__ == '__main__':
-    port = os.environ.get('PORT', 5000)
+    port = int(os.environ.get('PORT', 5000))
     app.run(host = '0.0.0.0', port = port,  debug = False) #Quando encontrar a função main, ele roda o método run no localhost (nosso computador)
