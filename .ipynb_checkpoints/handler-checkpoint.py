@@ -12,7 +12,7 @@ model = pickle.load(open('./model/model_rossmann2.pkl', 'rb'))
 app = Flask(__name__)
 
 #Healthcheck route
-@app.route('/', methods=['GET'])
+@app.route('/rossmann/predict', methods=['GET'])
 def home():
     return {"status": "ok", "message": "Rossmann Sales Prediction API is running"}
 
