@@ -6,13 +6,13 @@ from flask import Flask, request, Response
 import xgboost as xgb
 
 #Load XGBoost model - carrega o modelo em memória toda vez que a api for inicializada
-model = pickle.load(open('./model/model_rossmann2.pkl', 'rb'))
+model = pickle.load(open('model/model_rossmann2.pkl', 'rb'))
 
 #Initialize 
 app = Flask(__name__)
 
 #Healthcheck route
-@app.route('/rossmann/predict', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
     return {"status": "ok", "message": "Rossmann Sales Prediction API is running"}
 
